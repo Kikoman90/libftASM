@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsidler <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 18:41:24 by fsidler           #+#    #+#              #
-#    Updated: 2019/06/24 18:18:57 by fsidler          ###   ########.fr        #
+#    Updated: 2019/09/09 18:46:46 by fsidler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ CC = gcc
 
 #LD = ld
 
-ASFLAGS = -fmacho64
-CFLAGS = -Wall -Wextra -Werror
-#-fsanitize=address,undefined -g
+ASFLAGS = -f macho64 -MD
+CFLAGS = -Wall -Wextra -fsanitize=address,undefined -g -MMD
+#-Werror -MMD
+#-fsanitize=a
 
 INC_DIR = includes
 SRC_DIR = sources
@@ -27,9 +28,22 @@ OBJ_DIR = objs
 
 TEST = test/test.c
 
-SRCS = ft_bzero.s
+SRCS =	ft_bzero.s \
+		ft_isalnum.s \
+		ft_isalpha.s \
+		ft_isascii.s \
+		ft_isdigit.s \
+		ft_isprint.s \
+		ft_tolower.s \
+		ft_toupper.s \
+		ft_memcpy.s \
+		ft_memset.s \
+		ft_strcat.s \
+		ft_strdup.s \
+		ft_strlen.s \
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
+DPDS = $(addsuffix .d, $(OBJS))
 
 ############################## COLORS ##########################################
 
@@ -56,7 +70,7 @@ CUT = "\033[K"
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $<
+	@ar rcs $(NAME) $^
 	#@$(AS) $(ASFLAGS) file.s -o file.o
 	#@$(LD) file.o -macosx_version_min 10.8 -lSystem
 
@@ -64,7 +78,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 	@echo compiling [$@]...
 	@mkdir -p $(OBJ_DIR)
 	@$(AS) $(ASFLAGS) -o $@ $<
-	@printf ${UP}${CUT}
+
+#@printf ${UP}${CUT}
 
 ## TESTING ##
 
@@ -85,3 +100,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all test clean fclean re
+
+-include $(DPDS)

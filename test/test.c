@@ -6,16 +6,15 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/06/24 18:01:12 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/09 18:38:24 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-#include <stdio.h>//
-#include <strings.h>//
-//
+//#include <strings.h>//
 
-#include "libfts.h"
+#include "../includes/libfts.h"
+
+
 
 int		main(void)
 {
@@ -32,5 +31,15 @@ int		main(void)
 	while (i < length)
 		printf("%c", patrick[i++] + 48);
 	printf("\n");
+	printf("isalpha('b')?\n");
+	if (ft_isalpha('b'))
+		printf("Yes\n");
+	else
+		printf("No\n");
+	printf("isalpha(-3)\n");
+	if (ft_isalpha(-3))
+		printf("Yes\n");
+	else
+		printf("No\n");
 	return (0);
 }
