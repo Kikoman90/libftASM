@@ -6,19 +6,18 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/09 18:38:24 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/10 19:06:36 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <strings.h>//
-
 #include "../includes/libfts.h"
 
-
+#include <fcntl.h>
+#include <unistd.h>
 
 int		main(void)
 {
-	char patrick[10] = "123456789";
+	/*char patrick[10] = "123456789";
 	size_t length = 9;
 	size_t i = 0;
 
@@ -40,6 +39,15 @@ int		main(void)
 	if (ft_isalpha(-3))
 		printf("Yes\n");
 	else
-		printf("No\n");
+		printf("No\n");*/
+
+	//ft_cat(0);
+	int file_fd = open("test/test_cat.txt", O_RDONLY);
+	printf("file_fd is %d\n", file_fd);
+	ft_cat(file_fd);
+	close(file_fd);
+
+	ft_cat(0);
+
 	return (0);
 }

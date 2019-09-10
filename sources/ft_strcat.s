@@ -1,5 +1,5 @@
 ; char *ft_strcat(char *s1, char const *s2);
-;						rdi,			rsi
+; rdi, rsi
 
 section .text
 	extern _ft_memcpy

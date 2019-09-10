@@ -1,4 +1,4 @@
-;	int ft_isalnum(int c);
+; int ft_isalnum(int c);
 
 section .text
 	extern _ft_isalpha
@@ -12,10 +12,10 @@ _ft_isalnum:
 	call _ft_isdigit
 
 	test rax, 1
-	jnz exit
+	jnz _exit
 
 	call _ft_isalpha
 
-exit:
+_exit:
 	leave
 	ret

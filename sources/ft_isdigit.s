@@ -1,5 +1,4 @@
-;	int ft_isdigit(int c);
-;					rdi
+; int ft_isdigit(int c);
 
 section .text
 	global _ft_isdigit

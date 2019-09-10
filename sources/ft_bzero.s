@@ -1,5 +1,5 @@
 ; void ft_bzero(void *s, size_t n);
-;					  rdi,		rsi
+; rdi, rsi
 
 section .text
 	global _ft_bzero

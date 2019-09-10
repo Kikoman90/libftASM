@@ -6,7 +6,7 @@
 #    By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 18:41:24 by fsidler           #+#    #+#              #
-#    Updated: 2019/09/09 18:46:46 by fsidler          ###   ########.fr        #
+#    Updated: 2019/09/10 19:12:55 by fsidler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,9 @@ NAME = libfts.a
 AS = nasm
 CC = gcc
 
-#LD = ld
-
 ASFLAGS = -f macho64 -MD
-CFLAGS = -Wall -Wextra -fsanitize=address,undefined -g -MMD
-#-Werror -MMD
-#-fsanitize=a
+CFLAGS = -Wall -Wextra -Werror
+#-fsanitize=address,undefined
 
 INC_DIR = includes
 SRC_DIR = sources
@@ -41,27 +38,12 @@ SRCS =	ft_bzero.s \
 		ft_strcat.s \
 		ft_strdup.s \
 		ft_strlen.s \
+		ft_puts.s \
+		ft_cat.s \
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
 DPDS = $(addsuffix .d, $(OBJS))
 
-############################## COLORS ##########################################
-
-BY = "\033[33;1m"
-BR = "\033[31;1m"
-BG = "\033[32;1m"
-BB = "\033[34;1m"
-BM = "\033[35;1m"
-BC = "\033[36;1m"
-BW = "\033[37;1m"
-Y = "\033[33m"
-R = "\033[31m"
-G = "\033[32m"
-B = "\033[34m"
-M = "\033[35m"
-C = "\033[36m"
-WR = "\033[0m""\033[31;5m"
-X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
@@ -78,17 +60,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 	@echo compiling [$@]...
 	@mkdir -p $(OBJ_DIR)
 	@$(AS) $(ASFLAGS) -o $@ $<
-
-#@printf ${UP}${CUT}
+	@printf ${UP}${CUT}
 
 ## TESTING ##
 
-# ctest and asm test?
-#
-
 test: all
 	@$(CC) $(CFLAGS) -L. -lfts -I $(INC_DIR) $(TEST)
-
 
 clean:
 	@rm -rf $(OBJ_DIR)

@@ -1,5 +1,4 @@
 ; size_t ft_strlen(char const *str);
-;							rdi
 
 section .text
 	global _ft_strlen

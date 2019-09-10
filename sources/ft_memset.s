@@ -1,5 +1,5 @@
-; void	*ft_memset(void *s, int c, size_t n);
-;					rdi, rsi, rdx, rcx
+; void *ft_memset(void *s, int c, size_t n);
+; rdi, rsi, rdx
 
 section .text
 	global	_ft_memset
