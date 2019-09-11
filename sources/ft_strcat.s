@@ -11,7 +11,6 @@ _ft_strcat:
 	mov rbp, rsp
 
 	push rdi
-
 	push rsi
 
 	mov rdi, rsi

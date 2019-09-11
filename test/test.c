@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/10 19:06:36 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/11 18:39:40 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,38 @@ int		main(void)
 		printf("No\n");*/
 
 	//ft_cat(0);
-	int file_fd = open("test/test_cat.txt", O_RDONLY);
+	/*int file_fd = open("test/test_cat.txt", O_RDONLY);
 	printf("file_fd is %d\n", file_fd);
 	ft_cat(file_fd);
 	close(file_fd);
 
-	ft_cat(0);
+	ft_cat(0);*/
+
+	/*char *lol;
+	char *mama = "Mouche, mouchelette\nMoucheronnette, moucheron\n";
+	char papa[] = "Demain c'est ta fete\nToutes les mouches danseront\n";
+
+	if (!(lol = ft_strjoin(mama, papa)))
+		printf("strjoin failed\n");
+	else
+	{
+		printf("%s", lol);
+		free(lol);
+	}*/
+
+	int min = -2000;
+	int max = -3000;
+
+	int a2 = 2;
+	int b15 = 15;
+	int c16 = 16;
+	int d_1000 = -1000;
+	int e_12841 = -12841;
+
+	printf("min = %d | max = %d\n", min, max);
+	printf("a2 clamp = %d\nb15 clamp = %d\nc16 clamp %d\nd_1000 clamp = %d\ne_12841 clamp = %d\n", \
+		ft_iclamp(a2, min, max), ft_iclamp(b15, min, max), ft_iclamp(c16, min, max), ft_iclamp(d_1000, min, max), \
+		ft_iclamp(e_12841, min, max));
 
 	return (0);
 }

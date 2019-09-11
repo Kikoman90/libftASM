@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:55:57 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/10 18:11:30 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/11 18:41:55 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <sys/types.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 // %define MACH_SYSCALL(n)    0x2000000 | n
 // %define WRITE              4
@@ -23,7 +24,10 @@
 void	ft_bzero(void *s, size_t n);
 
 char	*ft_strcat(char *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(char const *src);
+
+int		ft_iclamp(int i, int min, int max);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
