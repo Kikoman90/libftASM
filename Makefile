@@ -6,7 +6,7 @@
 #    By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 18:41:24 by fsidler           #+#    #+#              #
-#    Updated: 2019/09/11 18:42:04 by fsidler          ###   ########.fr        #
+#    Updated: 2019/09/12 18:19:09 by fsidler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ OBJ_DIR = objs
 TEST = test/test.c
 
 SRCS =	ft_bzero.s \
+		ft_atoi.s \
 		ft_iclamp.s \
 		ft_isalnum.s \
 		ft_isalpha.s \

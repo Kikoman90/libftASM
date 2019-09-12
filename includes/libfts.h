@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:55:57 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/11 18:41:55 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:17:34 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(char const *src);
 
 int		ft_iclamp(int i, int min, int max);
+
+int		ft_atoi(char const *str);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

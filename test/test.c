@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/11 18:39:40 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:47:11 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ int		main(void)
 		free(lol);
 	}*/
 
+	printf("atoi makes this : %d\n", ft_atoi("		  -0090008"));
+	printf("atoi makes this : %d\n", ft_atoi("	+3a45\n"));
+	printf("atoi makes this : %d\n", ft_atoi("	-0"));
+
+
+/*
 	int min = -2000;
 	int max = -3000;
 
@@ -74,6 +80,7 @@ int		main(void)
 	printf("a2 clamp = %d\nb15 clamp = %d\nc16 clamp %d\nd_1000 clamp = %d\ne_12841 clamp = %d\n", \
 		ft_iclamp(a2, min, max), ft_iclamp(b15, min, max), ft_iclamp(c16, min, max), ft_iclamp(d_1000, min, max), \
 		ft_iclamp(e_12841, min, max));
+*/
 
 	return (0);
 }
