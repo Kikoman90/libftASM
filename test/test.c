@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/12 18:47:11 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/16 16:14:16 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,15 @@ int		main(void)
 		free(lol);
 	}*/
 
-	printf("atoi makes this : %d\n", ft_atoi("		  -0090008"));
-	printf("atoi makes this : %d\n", ft_atoi("	+3a45\n"));
-	printf("atoi makes this : %d\n", ft_atoi("	-0"));
+	//printf("atoi makes this : %d\n", ft_atoi("		  -0090008"));
+	//printf("atoi makes this : %d\n", ft_atoi("	+3a45\n"));
+	//printf("atoi makes this : %d\n", ft_atoi("	-0"));
 
+
+	char *lol1 = "abcz";
+	char *lol2 = "abda";
+
+	printf("ft_strcmp(lol1, lol2) = %i\n", ft_strcmp(lol1, lol2));
 
 /*
 	int min = -2000;

@@ -6,7 +6,7 @@
 #    By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 18:41:24 by fsidler           #+#    #+#              #
-#    Updated: 2019/09/12 18:19:09 by fsidler          ###   ########.fr        #
+#    Updated: 2019/09/16 14:59:40 by fsidler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,24 +25,25 @@ OBJ_DIR = objs
 
 TEST = test/test.c
 
-SRCS =	ft_bzero.s \
-		ft_atoi.s \
+SRCS =	ft_atoi.s \
+		ft_bzero.s \
+		ft_cat.s \
 		ft_iclamp.s \
+		ft_isdigit.s \
 		ft_isalnum.s \
 		ft_isalpha.s \
 		ft_isascii.s \
-		ft_isdigit.s \
 		ft_isprint.s \
 		ft_tolower.s \
 		ft_toupper.s \
 		ft_memcpy.s \
 		ft_memset.s \
-		ft_strcat.s \
-		ft_strjoin.s \
-		ft_strdup.s \
-		ft_strlen.s \
 		ft_puts.s \
-		ft_cat.s \
+		ft_strcat.s \
+		ft_strcmp.s \
+		ft_strdup.s \
+		ft_strjoin.s \
+		ft_strlen.s \
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
 DPDS = $(addsuffix .d, $(OBJS))

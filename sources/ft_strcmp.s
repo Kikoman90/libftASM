@@ -7,11 +7,24 @@ _ft_strcmp:
 	push rbp
 	mov rbp, rsp
 
-; get smaller strlen (+1 for \0) -> rcx
-; rep while comparison is zero (same string)
-; sub rdi + (smallerstrlen - rcx), rsi + (smallerstrlen - rcx)
-	
+	xor rax, rax
+	xor rdx, rdx
+
+_loop:
+	mov al, BYTE [rdi]
+	mov dl, BYTE [rsi]
+	test al, al
+	jz _return
+	test dl, dl
+	jz _return
+	cmp al, dl
+	jne _return
+	inc rdi
+	inc rsi
+	jmp _loop
+
+_return:
+	sub eax, edx
 
 	leave
 	ret
-

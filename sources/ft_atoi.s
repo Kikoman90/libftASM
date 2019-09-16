@@ -5,7 +5,7 @@ section .text
 
 _ft_atoi:
 	push rbp
-	mov rbp,  rsp
+	mov rbp, rsp
 
 	xor eax, eax
 	xor ecx, ecx

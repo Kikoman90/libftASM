@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:55:57 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/12 18:17:34 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/16 15:00:51 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,32 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-// %define MACH_SYSCALL(n)    0x2000000 | n
-// %define WRITE              4
-// %define STDOUT             1
+int		ft_atoi(char const *str);
 
 void	ft_bzero(void *s, size_t n);
 
-char	*ft_strcat(char *s1, char const *s2);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(char const *src);
+void	ft_cat(int fd);
 
 int		ft_iclamp(int i, int min, int max);
 
-int		ft_atoi(char const *str);
-
-int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-int		ft_puts(char const *s);
-
-size_t	ft_strlen(char const *str);
-
 void	*ft_memcpy(void *dst, void const *src, size_t n);
 void	*ft_memset(void *dst, int c, size_t n);
 
-void	ft_cat(int fd);
+int		ft_puts(char const *s);
+
+char	*ft_strcat(char *s1, char const *s2);
+int		ft_strcmp(char const *s1, char const *s2);
+char	*ft_strdup(char const *src);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(char const *str);
 
 #endif
