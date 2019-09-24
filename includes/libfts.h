@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:55:57 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:52 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/24 17:36:47 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <sys/types.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 int		ft_atoi(char const *str);
 
