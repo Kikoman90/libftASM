@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:55:57 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/16 15:00:51 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/24 16:51:52 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 
 int		ft_atoi(char const *str);
+
+char	*ft_itoa(int i);
 
 void	ft_bzero(void *s, size_t n);
 

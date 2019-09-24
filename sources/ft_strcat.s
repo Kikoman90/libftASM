@@ -17,21 +17,21 @@ _ft_strcat:
 
 	call _ft_strlen
 
-	mov rdx, rax		;len rsi
-	inc rdx				;len + 1
+	mov rdx, rax
+	inc rdx
 
-	mov rdi, [rsp + 8]	;get rdi
+	mov rdi, [rsp + 8]	; get rdi
 
 	call _ft_strlen
 
 	pop rsi
 	mov rdi, [rsp]
 	add rdi, rax
-	sub rsp, 8			;padding
+	sub rsp, 8
 
 	call _ft_memcpy
 
-	add rsp, 8			;remove padding
+	add rsp, 8
 	pop rax
 
 	leave

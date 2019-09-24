@@ -22,11 +22,11 @@ _ft_cat:
 _loop:
 	mov rdi, rbx
 	mov rsi, rsp
-	mov rdx, BUFF_SIZE; - 1
+	mov rdx, BUFF_SIZE
 	mov rax, MACH_SYSCALL(READ)
 	syscall
 
-	jc _exit	;error
+	jc _exit ; error (errno has been set)
 	cmp rax, 0
 	jle _exit
 

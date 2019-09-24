@@ -17,7 +17,7 @@ _space_inc:
 	inc rdi
 
 _space_loop:
-	cmp BYTE [rdi], 32
+	cmp BYTE [rdi], 32 ; ' '
 	je _space_inc
 	cmp BYTE [rdi], 9
 	jl _get_sign
@@ -26,21 +26,21 @@ _space_loop:
 	jmp _space_inc
 
 _get_sign:
-	cmp BYTE [rdi], 43
+	cmp BYTE [rdi], 43 ; '+'
 	je _digit_inc
-	cmp BYTE [rdi], 45
+	cmp BYTE [rdi], 45 ; '-'
 	jne _digit_loop
 
-	mov edx, 1
+	mov edx, 1 ; store sign = true
 
 _digit_inc:
 	inc rdi
 
 _digit_loop:
 	mov cl, BYTE [rdi]
-	cmp cl, 48
+	cmp cl, 48 ; '0'
 	jl _sign
-	cmp cl, 57
+	cmp cl, 57 ; '9'
 	jg _sign
 
 	imul eax, 10
