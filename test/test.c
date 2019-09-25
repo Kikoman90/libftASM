@@ -6,7 +6,7 @@
 /*   By: fsidler <fsidler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 15:53:46 by fsidler           #+#    #+#             */
-/*   Updated: 2019/09/24 19:16:54 by fsidler          ###   ########.fr       */
+/*   Updated: 2019/09/25 16:36:24 by fsidler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@
 
 int		main(void)
 {
+
+	char *long_str = "qwertyuiop asfdghjkklzxcvbnm1234567898987654123qe fvtsvdqwertyuiolkjhgfdsazxcvbnmnbvcxzasdfghjklpoiuytrew!@#$^&*())(*&^$#@!@#$^&**&^$#@#$^&*(*&^$#";
 
 #ifdef _FT_BZERO
 	printf("_ft_bzero_\n");
@@ -142,27 +144,66 @@ int		main(void)
 #endif
 
 #ifdef _FT_PUTS
-
+	printf("_ft_puts_\n");
+	printf("\tft_puts(\"%s\") = %d\n", "K", ft_puts("K"));
+	printf("\tft_puts(\"%s\") = %d\n", "hello worlds\n", ft_puts("hello worlds\n"));
+	printf("\tft_puts(\"%s\") = %d\n", long_str, ft_puts(long_str));
+	printf("\tft_puts(\"%s\") = %d\n", NULL, ft_puts(NULL));
+	printf("\tft_puts(0) = %d\n", ft_puts(0));
+	printf("_ft_puts_\n\n");
 #endif
 
 #ifdef _FT_STRLEN
-
+	printf("_ft_strlen\n");
+	printf("\tft_strlen(\"%s\") = %lu\n", "", ft_strlen(""));
+	printf("\tft_strlen(\"%s\") = %lu\n", "1", ft_strlen("1"));
+	printf("\tft_strlen(\"%s\") = %lu\n", "four", ft_strlen("four"));
+	printf("\tft_strlen(\"%s\") = %lu\n", long_str, ft_strlen(long_str));
+	printf("_ft_strlen\n\n");
 #endif
 
 #ifdef _FT_MEMSET
-
+	printf("_ft_memset_\n");
+	char memstr[] = "Chevaliers dla Tableuronde";
+	printf("\tmemstr = \"%s\"\n", memstr);
+	printf("\tft_strlen(memstr) = %lu\n", ft_strlen(memstr));
+	printf("\tft_memset(memstr, '$', 0) = \"%s\"\n", ft_memset(memstr, '^', 0));
+	printf("\tft_memset(memstr, '^', 26) = \"%s\"\n", ft_memset(memstr, '^', 26));
+	printf("_ft_memset_\n\n");
 #endif
 
 #ifdef _FT_MEMCPY
-
+	printf("_ft_memcpy_\n");
+	char cpydst[] = "buvons un coup la la !";
+	char cpysrc[] = "BUVONS EN 2222 LA LA !!!";
+	printf("\tcpydst = \"%s\"\n", cpydst);
+	printf("\tft_memcpy(cpydst, \"%s\", 0) = \"%s\"\n", "AU BON BAR", ft_memcpy(cpydst, "AU BON BAR", 0));
+	printf("\tft_memcpy(cpydst, \"%s\", 14) = \"%s\"\n", cpysrc, ft_memcpy(cpydst, cpysrc, 14));
+	printf("_ft_memcpy_\n\n");
 #endif
 
 #ifdef _FT_STRDUP
-
+	printf("_ft_strdup_\n");
+	char *dup_str;
+	char *dups[3] = { "", "mais a 7 ans ON PERD SES DEEEEEEEEEENNNNTS !", "Je collectionne des canards par milliers" };
+	printf("\tft_strdup(\"%s\") = \"%s\"\n", dups[0], (dup_str = ft_strdup(dups[0])));
+	free(dup_str);
+	printf("\tft_strdup(\"%s\") = \"%s\"\n", dups[1], (dup_str = ft_strdup(dups[1])));
+	free(dup_str);
+	printf("\tft_strdup(\"%s\") = \"%s\"\n", dups[2], (dup_str = ft_strdup(dups[2])));
+	free(dup_str);
+	printf("_ft_strdup_\n\n");
 #endif
 
 #ifdef _FT_CAT
-
+	printf("_ft_cat_\n");
+	int fd = open("test/test_cat.txt", O_RDONLY);
+	printf("\tint fd = open(\"test_cat.txt\", O_RDONLY)\n");
+	printf("\tft_cat(fd)\n");
+	ft_cat(fd);
+	printf("\tclose(fd)\n");
+	close(fd);
+	printf("_ft_cat_\n\n");
 #endif
 
 #ifdef _FT_ATOI
@@ -202,11 +243,24 @@ int		main(void)
 #endif
 
 #ifdef _FT_STRCMP
-
+	printf("_ft_strcmp_\n");
+	printf("\tft_strcmp(\"%s\", \"%s\") = %d\n", "cheech and", "chong", ft_strcmp("cheech and", "chong"));
+	printf("\tft_strcmp(\"%s\", \"%s\") = %d\n", "spoonGod*", "spoonGod", ft_strcmp("spoonGod*", "spoonGod"));
+	printf("\tft_strcmp(\"%s\", \"%s\") = %d\n", "Bienvenue a Poil", "Bienvenue a poil", ft_strcmp("Bienvenue a Poil", "Bienvenue a poil"));
+	printf("\tft_strcmp(\"%s\", \"%s\") = %d\n", "goon's dope", "goon's dope", ft_strcmp("goon's dope", "goon's dope"));
+	printf("_ft_strcmp_\n\n");
 #endif
 
 #ifdef _FT_STRJOIN
-
+	printf("_ft_strjoin_\n");
+	char *join_str;
+	printf("\tft_strjoin(\"%s\", \"%s\") = \"%s\"\n", "", "fear is not real", (join_str = ft_strjoin("", "fear is not real")));
+	free(join_str);
+	printf("\tft_strjoin(\"%s\", \"%s\") = \"%s\"\n", "but danger, danger is very real", "", (join_str = ft_strjoin("but danger, danger is very real", "")));
+	free(join_str);
+	printf("\tft_strjoin(\"%s\", \"%s\") = \"%s\"\n", "The only place that fear can exist...", " is in our thoughts of the future", (join_str = ft_strjoin("The only place that fear can exist...", " is in our thoughts of the future")));
+	free(join_str);
+	printf("_ft_strjoin_\n\n");
 #endif
 
 	return (0);
