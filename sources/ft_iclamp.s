@@ -10,9 +10,10 @@ _ft_iclamp:
 
 _min_check:
 	cmp edi, esi
-	jge _max_check
+	jg _max_check
 	
 	mov edi, esi
+	jmp _exit
 
 _max_check:
 	cmp edi, edx
